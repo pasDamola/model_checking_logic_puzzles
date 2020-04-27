@@ -3,6 +3,7 @@ from logic import *
 AKnight = Symbol("A is a Knight")
 AKnave = Symbol("A is a Knave")
 
+
 BKnight = Symbol("B is a Knight")
 BKnave = Symbol("B is a Knave")
 
@@ -11,9 +12,16 @@ CKnave = Symbol("C is a Knave")
 
 # Puzzle 0
 # A says "I am both a knight and a knave."
+
 knowledge0 = And(
-    # TODO
+   Or(AKnave, AKnight),
+   Not(And(AKnight, AKnave)),
+   Implication(AKnight, And(AKnight, AKnave))
 )
+
+
+
+
 
 # Puzzle 1
 # A says "We are both knaves."
